@@ -2,9 +2,9 @@
 #define AVRMILLIS_H
 
 //============================================================
-// This code provides PlatdormIO projects which are AVR based
-// specifically the ATmega328P, with the ability to use Arduino
-// functions such as millis() and micros().
+// This code provides PlatformIO projects which are AVR based
+// specifically the ATmega328P, with the ability to use 
+// Arduino functions such as millis() and micros().
 //
 // Norman Dunbar
 // 4 January 2021.
@@ -40,16 +40,16 @@ public:
     //--------------------------------------------------------
     // Return count of milliseconds since the code in the
     // cpp file created the AVRmillis object. Will overflow
-    // every 49 days, 17 hours, 2 minutes and 47.29487424 
-    // seconds. (Plus one for the rollover).
+    // every 49 days, 17 hours, 2 minutes and 47 seconds and
+    // 295 milliseconds. (Plus 1 for the actual rollover).
     //--------------------------------------------------------
     uint32_t millis();
 
     //--------------------------------------------------------
     // Return count of microseconds since the code in the
     // cpp file created the AVRmillis object. Will overflow 
-    // every 71 minutes 34.967295 seconds. (Plus 1 for the 
-    // rollover).
+    // every 71 minutes 34 seconds and 967,295 microseconds. 
+    // (Plus 1 for the actual rollover).
     //--------------------------------------------------------
     uint32_t micros();
 
@@ -60,13 +60,6 @@ public:
     // enough for Arduino, I'm happy with it too. Mostly!
     //--------------------------------------------------------
     void interrupt();
-
-
-    uint32_t getMillis(){ return timer0_millis;}
-    uint8_t  getFract() { return timer0_fract;}
-    void setMillis(uint32_t m) { timer0_millis = m;}
-    void setFract(uint8_t f)   { timer0_fract = f;}
-
 
 
 private:
