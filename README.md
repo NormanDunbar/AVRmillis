@@ -57,7 +57,7 @@ Exactly the same as the Arduino function `micros()`. This function returns an un
 
 This counter will rollover to zero after 71 minutes, 34 seconds and 967,295 microSeconds, plus 1 extra microsecond to cause the rollover.
 
-If your code uses `micros()` and is left running for longer than this period, you need to consider the rollover in your calculations.
+If your code uses `micros()` and is left running for longer than this period, you need to consider the rollover in your calculations. (Hint: Don't use signed variables!)
 
 ```
 #include "AVRmillis.h"
@@ -92,13 +92,14 @@ int main() {
     // Interrupts required!
     sei();
 
-    // Grab micros() so far.
+    // Grab millis() so far.
     uint32_t currentMillis = AVRmillis.millis();
 
     // Do something ...
     ...
 }
 ```
+#### Handling Rollover
 
 By using `unsigned` values the rollover effect is nullified:
 
