@@ -1,0 +1,25 @@
+{
+  "name": "AVRmillis",
+  "version": "1.0.2",
+  "description": "This is a library for PlatformIO which allows anyone not using the Arduino framework, to write code which has access to Arduino-a-like millis() and micros() functions. The Arduino framework already has those functions built in, so this library is not suitable for use with that framework. The library has been tested on Arduino Uno, Duemilanove and Nano boards using the Atmega328P microcontroller. The library creates a class named AVR_millis, and a global object named AVRmillis through which the functions are accessed. See the readme.md file for full details.",
+  "keywords": "millis, micros",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/NormanDunbar/AVRmillis"
+  },
+  "authors":
+  [
+    {
+      "name": "Norman Dunbar",
+      "email": "norman@dunbar-it.co.uk",
+      "url": "http://www.dunbar-it.co.uk/contact-us/",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/NormanDunbar/AVRmillis",
+  "frameworks": "*",
+  "platforms": "atmelavr"
+}
+
