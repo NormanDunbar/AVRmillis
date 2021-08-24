@@ -44,14 +44,14 @@ The files you would need to utilise this library, live in the `lib/AVRmillis` di
 
 ## The Class
 
-The library code defines and implements a class `AVR_millis` and creates a global object of this class named `AVRmillis`. The class publishes the following functions:
+The library code defines and implements a class `AVR_millis` (with an underscore) and creates a global object of this class named `AVRmillis` (without an underscore). Note the difference? There's an underscore in the class name, but not in the global object created for us, when executed. Don't get the two confused! The class publishes the following functions:
 
-* `uint32_t AVRmillis::micros()`
-* `uint32_t AVRmillis::millis()`
-* `void AVRmillis::interrupt()`
+* `uint32_t AVR_millis::micros()` -- called as `AVRmillis.micros()`;
+* `uint32_t AVR_millis::millis()` -- called as `AVRmillis.millis()`;
+* `void AVR_millis::interrupt()` -- *don't* call this fucntion, you have been warned!;
 
 
-### `AVRmillis::micros`
+### `AVR_millis::micros`
 
 Exactly the same as the Arduino function `micros()`. This function returns an unsigned 32 bit integer representing the elapsed microseconds (millionths of a second) since the `AVRmillis` object was created.
 
@@ -76,7 +76,7 @@ int main() {
 ```
 
 
-### `AVRmillis::millis`
+### `AVR_millis::millis`
 
 Exactly the same as the Arduino function `millis()`. This function returns an unsigned 32 bit integer representing the elapsed milliseconds (thousandths of a second) since the `AVRmillis` object was created.
 
@@ -124,13 +124,13 @@ while (1) {
 ...
 ```
 
-### `AVRmillis::interrupt`
+### `AVR_millis::interrupt`
 
 **DO NOT CALL THIS FUNCTION DIRECTLY**. Just saying!
 
 This function exists purely to be called by the handler for the Timer/counter 0 Overflow Interrupt and is not designed to be called from your own code. So, please don't.
 
-It has to be public as the interrupt handler cannot access the internals of the `AVRmillis` class in an extremely efficient manner, so this is the quickest and next best thing.
+It has to be `public` as the interrupt handler cannot access the internals of the `AVRmillis` class in an extremely efficient manner, so this is the quickest and next best thing.
 
 If interrupt handlers *could* be written as class member functions, life would be *interesting* to say the least! Imagine what would happen when an object went out of scope!
 
