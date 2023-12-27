@@ -40,7 +40,7 @@ uint32_t AVR_millis::millis() {
 }
 
 
-// How many milliseconds since we initialised this class
+// How many microseconds since we initialised this class
 // object?
 uint32_t AVR_millis::micros() {
     uint32_t m;
@@ -102,7 +102,7 @@ void AVR_millis::interrupt() {
     // per overflow period.
     f += FRACT_INC;
 
-    // Do we have a "leap" milliseconds yet? If so,
+    // Do we have any "leap" milliseconds yet? If so,
     // add it in and adjust the fraction.
     if (f >= FRACT_MAX) {
         f -= FRACT_MAX;

@@ -2,7 +2,7 @@
 #define DEFINES_H
 
 //============================================================
-// This code provides PlatdormIO projects which are AVR based
+// This code provides PlatformIO projects which are AVR based
 // specifically the ATmega328P, with the ability to use Arduino
 // functions such as millis() and micros().
 //
