@@ -37,7 +37,7 @@ lib_deps = normandunbar/AVRmillis@^1.0.2
 
 ```
 
-See also [https://registry.platformio.org/libraries/normandunbar/AVRmillis/installation] for details.
+See also [the Platformio docs](https://registry.platformio.org/libraries/normandunbar/AVRmillis/installation "https://registry.platformio.org/libraries/normandunbar/AVRmillis/installation") for details.
 
 When you build the project, PlatformIO will automatically download and install the library.
 
